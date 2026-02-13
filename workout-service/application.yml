@@ -1,5 +1,8 @@
 spring:
   application:
     name: workout-service
+  mvc: 
+    pathpattern:
+      matching-strategy: ant_path_matcher
 server:
   port: 8082
