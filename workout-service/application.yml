@@ -1,9 +1,10 @@
 spring:
   application:
     name: workout-service
-  mvc: 
+  mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
 springdoc:
   api-docs:
     path: /v3/api-docs
@@ -11,10 +12,14 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
-    operationsSorter: method
-    tagsSorter: alpha
+    operations-sorter: method
+    tags-sorter: alpha
     display-request-duration: true
     try-it-out-enabled: true
+    doc-expansion: none
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
   show-actuator: false
+
 server:
   port: 8082
