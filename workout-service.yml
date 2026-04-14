@@ -30,4 +30,6 @@ springdoc:
   default-produces-media-type: application/json
   default-consumes-media-type: application/json
   show-actuator: false
-
+secret:
+  key: qK4dYg5j0nH+ZC3X9tqkPj8uQmE2rA7VbIwTzUuO1Hc=
+  issuer: user-service
