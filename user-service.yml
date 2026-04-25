@@ -50,4 +50,5 @@ eureka:
       defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761/eureka}
 
 app:
+  mail-from: ${MAIL_FROM:no-reply@gymnasios.local}
   frontend-base-url: ${FRONTEND_BASE_URL}
