@@ -6,14 +6,14 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:h2:mem:workoutdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: password
+    url: ${WORKOUT_DB_URL:jdbc:h2:mem:workoutdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
+    driver-class-name: ${WORKOUT_DB_DRIVER:org.h2.Driver}
+    username: ${WORKOUT_DB_USERNAME:sa}
+    password: ${WORKOUT_DB_PASSWORD:password}
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: ${WORKOUT_JPA_DDL_AUTO:update}
+    show-sql: ${WORKOUT_SHOW_SQL:false}
 
 springdoc:
   api-docs:
@@ -30,6 +30,12 @@ springdoc:
   default-produces-media-type: application/json
   default-consumes-media-type: application/json
   show-actuator: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761/eureka}
+
 secret:
-  key: qK4dYg5j0nH+ZC3X9tqkPj8uQmE2rA7VbIwTzUuO1Hc=
-  issuer: user-service
+  key: ${JWT_SECRET}
+  issuer: ${JWT_ISSUER:user-service}
